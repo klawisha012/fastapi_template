@@ -11,7 +11,6 @@ services:
       POSTGRES_DB: Project
     volumes:
       - local_pgdata:/var/lib/postgresql/data
-    
 
   pgadmin:
     image: elestio/pgadmin
@@ -24,6 +23,18 @@ services:
       PGADMIN_DEFAULT_PASSWORD: admin
     volumes:
       - pgadmin-data:/var/lib/pgadmin
+
+  backend:
+    build:
+      context: .
+    container_name: fastapi-template
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env.example
+    depends_on:
+      - db
 
 volumes:
   local_pgdata:
