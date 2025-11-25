@@ -1,5 +1,13 @@
 # FastAPI Template
 
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Pydantic](https://img.shields.io/badge/Pydantic-E92063?logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
+[![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white)](https://prometheus.io/)
+
+
 Шаблон FastAPI без готовых эндпоинтов, но с полностью настроенной инфраструктурой: асинхронная база данных, система конфигураций и метрики Prometheus.
 
 ---
@@ -15,22 +23,6 @@
 
 ---
 
-## 📁 Структура проекта
-
-```
-fastapi_template/
-  ├── src/
-  │   ├── core/        # настройки, конфигурации
-  │   ├── db/          # подключение к БД, сессии
-  │   ├── metrics/     # интеграция с Prometheus
-  │   ├── main.py      # точка входа приложения
-  ├── pyproject.toml
-  ├── uv.lock
-  ├── README.md
-```
-
----
-
 ## ⚙️ Установка
 
 ```bash
@@ -42,21 +34,8 @@ uv sync
 ## ▶️ Запуск приложения
 
 ```bash
-uv run uvicorn src.main:app --reload
+python -m src.main
 ```
-
----
-
-## 🛠 Настройки окружения
-
-Используются переменные окружения + `.env` файл:
-
-* DB_URL
-* PROJECT_NAME
-* DEBUG
-* PROMETHEUS_ENABLED
-
----
 
 ## 📊 Метрики Prometheus
 
@@ -67,18 +46,5 @@ uv run uvicorn src.main:app --reload
 ```
 
 Совместимо с Prometheus и Grafana.
-
----
-
-## 🧩 Что можно добавить дальше
-
-* Встроенную аутентификацию (JWT)
-* CRUD‑модули
-* Модели БД
-* Докеризацию
-
----
-
-## 🧑‍💻 Автор
 
 Шаблон подготовлен для быстрого старта проектов на FastAPI.
